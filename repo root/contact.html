@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact page</title>
+  <link rel="stylesheet" href="./css/contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="../photos/rajlogo.jpg" alt="Logo" />
+        <h2>RaJaN</h2>
+      </div>
+
+      <div class="marquee">
+        <marquee>Welcome to my website</marquee>
+      </div>
+
+      <div class="actions">
+        <div class="search-login">
+          <input type="text" placeholder="Search here" />
+          <button class="scr">Search</button>
+          <button class="login">Login</button>
+        </div>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+
+    <nav class="menu" id="menu">
+      <ul>
+<li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+
+
+    <hr><br>
+
+  <div class="container">
+    <div class="form-container">
+      <h2>Contact Form</h2>
+      <form action="../php/insert.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <select name="country" required>
+          <option value="Nepal" selected>Nepal</option>
+          <option>India</option>
+          <option>China</option>
+          <option>USA</option>
+          <option>UK</option>
+          <option>Australia</option>
+          <option>Canada</option>
+          <option>Germany</option>
+          <option>France</option>
+          <option>Japan</option>
+          <option>Brazil</option>
+          <option>Mexico</option>
+          <option>Russia</option>
+          <option>South Africa</option>
+          <option>Singapore</option>
+          <option>Malaysia</option>
+          <option>Italy</option>
+          <option>Spain</option>
+          <option>Portugal</option>
+          <option>Bangladesh</option>
+          <option>Pakistan</option>
+          <option>Afghanistan</option>
+          <option>South Korea</option>
+          <option>Indonesia</option>
+          <option>Philippines</option>
+          <option>Thailand</option>
+          <option>Vietnam</option>
+          <option>Netherlands</option>
+          <option>Sweden</option>
+          <option>Norway</option>
+          <option>Denmark</option>
+          <option>Switzerland</option>
+          <option>Poland</option>
+          <option>Austria</option>
+          <option>Belgium</option>
+          <option>Finland</option>
+          <option>Ireland</option>
+          <option>New Zealand</option>
+          <option>Argentina</option>
+          <option>Colombia</option>
+          <option>Chile</option>
+          <option>Egypt</option>
+          <option>Morocco</option>
+          <option>Turkey</option>
+          <option>Iran</option>
+          <option>Iraq</option>
+          <option>Israel</option>
+          <option>Ukraine</option>
+          <option>Saudi Arabia</option>
+        </select>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+        <p id="status"></p>
+      </form>
+    </div>
+    <div class="developer-info">
+      <img src="../photos/1736581013860.jpg" alt="Rajan KC" />
+      <h3>Rajan KC</h3>
+      <p><strong>Phone:</strong> 9745526484</p>
+      <p><strong>Email:</strong> rajanregmi79@gmail.com</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      const response = await fetch("../php/insert.php", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.text();
+      status.textContent = result;
+      form.reset();
+    });
+    
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("status") === "success") {
+    alert("✅ Form successfully submitted!");
+  }
+
+  </script>
+
+
+<hr><br>
+
+ 
+     <!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+
+    <div class="footer-nav">
+      <ul>
+         <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+    <p>&copy; 2025 Rajan Website. All rights reserved.</p>
+  </div>
+</footer>
+
+    <script src="../javascript/contact.js"></script>
+</body>
+</html>

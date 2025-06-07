@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services page</title>
+  <link rel="stylesheet" href="./css/services.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="../photos/rajlogo.jpg" alt="Logo" />
+        <h2>RaJaN</h2>
+      </div>
+
+      <div class="marquee">
+        <marquee>Welcome to my website</marquee>
+      </div>
+
+      <div class="actions">
+        <div class="search-login">
+          <input type="text" placeholder="Search here" />
+          <button class="scr">Search</button>
+          <button class="login">Login</button>
+        </div>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+
+
+    <hr>
+
+<!--services-->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Services</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: scale(1.03);
+    }
+
+    .service-card i {
+      font-size: 50px;
+      color: #e74c3c;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .learn-more {
+      padding: 8px 16px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .learn-more:hover {
+      background-color: darkred;
+    }
+
+ .detail-page {
+  display: none;
+  max-width: 700px;
+  background: white;
+  margin: 20px auto;   /* थोरै उपर तल स्पेस */
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.4s ease;
+
+  /* Mobile मा राम्रो देखाउन */
+  height: auto;       /* fixed height नभएको राम्रो */
+  max-height: 90vh;   /* screen को 90% भित्र */
+  overflow-y: auto;   /* यदि content लामो भयो भने scrollbar आउँछ */
+}
+
+
+    .detail-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .back-btn, .close-btn {
+      background: crimson;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-btn:hover, .close-btn:hover {
+      background: darkred;
+    }
+
+    .detail-content {
+      text-align: center;
+    }
+
+    .detail-content i {
+      font-size: 60px;
+      color: #e74c3c;
+      margin-bottom: 15px;
+    }
+
+    .detail-content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .detail-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Responsive Grid */
+    @media (max-width: 768px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @media (max-width: 480px) {
+  .service-grid {
+    grid-template-columns: 1fr;  /* 1 column for small mobile */
+  }
+}
+
+  </style>
+</head>
+<body>
+  <h1 class="title" style="color: black; text-decoration: underline; size: 20px; align-items: center;justify-content: center;text-align: center;">Our Services</h1>
+  <div class="service-grid" id="serviceGrid">
+    <div class="service-card" onclick="showDetail(0)">
+      <i class="fas fa-code"></i>
+      <h3>Web Development</h3>
+      <button class="learn-more">Learn More</button>
+    </div>
+    <div class="service-card" onclick="showDetail(1)">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Responsive Design</h3>
+      <button class="learn-more">Learn More</button>
+    </div>
+    <div class="service-card" onclick="showDetail(2)">
+      <i class="fas fa-server"></i>
+      <h3>Backend Integration</h3>
+      <button class="learn-more">Learn More</button>
+    </div>
+    <div class="service-card" onclick="showDetail(3)">
+      <i class="fas fa-bug"></i>
+      <h3>Testing & Debugging</h3>
+      <button class="learn-more">Learn More</button>
+    </div>
+    <div class="service-card" onclick="showDetail(4)">
+      <i class="fas fa-chart-line"></i>
+      <h3>SEO Optimization</h3>
+      <button class="learn-more">Learn More</button>
+    </div>
+    <div class="service-card" onclick="showDetail(5)">
+      <i class="fas fa-cloud-upload-alt"></i>
+      <h3>Hosting & Deployment</h3>
+      <button class="learn-more">Learn More</button>
+    </div>
+  </div>
+
+  <div class="detail-page" id="detailPage">
+    <div class="detail-header">
+      <button onclick="goBack()" class="back-btn">← Back</button>
+      <button onclick="closeDetail()" class="close-btn">X</button>
+    </div>
+    <div class="detail-content">
+      <i id="detailIcon" class="fas fa-code"></i>
+      <h2 id="detailTitle">Web Development</h2>
+      <p id="detailDescription">
+  Website development is the process of building and maintaining websites.
+   It involves a combination of front-end design (what users see) and back-end programming 
+   (how the site works behind the scenes). A well-developed website ensures a smooth user experience,
+    fast performance, mobile responsiveness, and high security. Web development also includes integrating databases, 
+    implementing SEO strategies, and deploying the site on reliable servers. Whether you're creating a
+     personal blog or a full-scale e-commerce platform, professional web development is key to online success.
+</p>
+
+    </div>
+  </div>
+
+<script>
+  const services = [
+     {
+     icon: 'fas fa-code',
+     title: 'Web Development',
+     description: 'Website development is the process of building and maintaining websites. It involves a combination of front-end design (what users see) and back-end programming (how the site works behind the scenes). A well-developed website ensures a smooth user experience, fast performance, mobile responsiveness, and high security. Web development also includes integrating databases, implementing SEO strategies, and deploying the site on reliable servers. Whether you\'re creating a personal blog or a full-scale e-commerce platform, professional web development is key to online success.'
+    },
+
+    {
+      icon: 'fas fa-mobile-alt',
+      title: 'Responsive Design',
+      description: 'Responsive design ensures your website looks and functions perfectly on all devices, from desktops and laptops to tablets and smartphones. It adapts the layout dynamically using flexible grids, media queries, and scalable images. This approach not only enhances the user experience but also improves accessibility and SEO performance. In today’s mobile-first world, responsive design is essential for engaging your audience and reducing bounce rates across all platforms.'
+
+    },
+    {
+    icon: 'fas fa-server',
+    title: 'Backend Integration',
+    description: 'Backend integration connects your website or app to databases, servers, and APIs, enabling real-time data exchange and secure functionality. It involves implementing server-side logic using technologies like PHP, Node.js, or Python, ensuring that user data is processed correctly, securely stored, and efficiently retrieved. Strong backend integration supports features like login systems, payment gateways, data management, and dynamic content — making your application powerful, scalable, and intelligent.'
+    },
+    {
+     icon: 'fas fa-bug',
+     title: 'Testing & Debugging',
+     description: 'Testing and debugging are critical steps in software development to ensure your application runs smoothly and without errors. Through various testing methods—such as unit testing, integration testing, and user acceptance testing—we identify and fix bugs, optimize performance, and improve usability. Rigorous debugging helps maintain code quality, reduce crashes, and provide a seamless user experience across all devices and platforms.'
+    },
+    {
+     icon: 'fas fa-chart-line',
+    title: 'SEO Optimization',
+    description: 'SEO (Search Engine Optimization) improves your website’s visibility on search engines like Google by optimizing content, keywords, and metadata. Effective SEO increases organic traffic, enhances brand credibility, and drives higher conversion rates. Our SEO strategies include on-page optimization, link building, and performance tuning, ensuring your site ranks well and reaches your target audience effectively.'
+    },
+    {
+    icon: 'fas fa-cloud-upload-alt',
+    title: 'Hosting & Deployment',
+    description: 'Hosting and deployment involve making your website or application accessible online through reliable servers and cloud platforms. We manage server setup, domain configuration, SSL certification, and continuous deployment pipelines to ensure high availability, security, and fast load times. Proper hosting and deployment guarantee your users get a smooth, safe, and uninterrupted experience.'
+    }
+
+  ];
+function showDetail(index) {
+  document.getElementById("serviceGrid").style.display = "none";
+  document.getElementById("detailPage").style.display = "block";
+
+  // Scroll to top when detail page shows (important for mobile)
+  document.getElementById("detailPage").scrollTop = 0;
+  window.scrollTo(0, 0);  // यो पनि राख्नुस्, सुरक्षित तरिका
+
+  document.getElementById("detailIcon").className = services[index].icon;
+  document.getElementById("detailTitle").innerText = services[index].title;
+  document.getElementById("detailDescription").innerText = services[index].description;
+}
+
+  function goBack() {
+    document.getElementById("serviceGrid").style.display = "grid";
+    document.getElementById("detailPage").style.display = "none";
+  }
+
+  function closeDetail() {
+    goBack();
+  }
+  
+</script>
+
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+
+    <div class="footer-nav">
+      <ul>
+         <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Rajan Website. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

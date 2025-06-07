@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photos page</title>
+  <link rel="stylesheet" href="./css/photos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="../photos/rajlogo.jpg" alt="Logo" />
+        <h2>RaJaN</h2>
+      </div>
+
+      <div class="marquee">
+        <marquee>Welcome to my website</marquee>
+      </div>
+
+      <div class="actions">
+        <div class="search-login">
+          <input type="text" placeholder="Search here" />
+          <button class="scr">Search</button>
+          <button class="login">Login</button>
+        </div>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+
+
+    <hr><br>
+
+
+<!-- photos -->
+<h1 class="title" style="color: black; text-decoration: underline; size: 20px;">Photo Gallery</h1>
+
+<!-- Photo Gallery -->
+<div class="gallery">
+  <div class="photo"><img src="../photos/1.jpg" alt="Photo 1"></div>
+  <div class="photo"><img src="../photos/1736581013860.jpg" alt="Photo 2"></div>
+  <div class="photo"><img src="../photos/2.jpg" alt="Photo 3"></div>
+  <div class="photo"><img src="../photos/3.jpg" alt="Photo 4"></div>
+  <div class="photo"><img src="../photos/6.webp" alt="Photo 5"></div>
+  <div class="photo"><img src="../photos/7.webp" alt="Photo 6"></div>
+</div>
+
+<!-- Modal Viewer -->
+<div id="modal" class="modal">
+  <span class="close" onclick="closeModal()">✖</span>
+  <img id="modalImg" class="modal-content" />
+  <div class="modal-buttons">
+    <button onclick="prevImage()">&lt;</button>
+    <button onclick="openInNewTab()">.</button>
+    <button onclick="nextImage()">&gt;</button>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modalImg");
+  const images = document.querySelectorAll(".photo img");
+  let currentIndex = 0;
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+      currentIndex = index;
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImg.src = images[currentIndex].src;
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImg.src = images[currentIndex].src;
+  }
+
+  function openInNewTab() {
+    window.open(modalImg.src, "_blank");
+  }
+
+  // Optional: Close on outside click
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+</script>
+
+<hr><br>
+     <!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+
+    <div class="footer-nav">
+      <ul>
+         <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+     <p>&copy; 2025 Rajan Website. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

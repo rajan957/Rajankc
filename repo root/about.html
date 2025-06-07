@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About page</title>
+  <link rel="stylesheet" href="./css/about.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="../photos/rajlogo.jpg" alt="Logo" />
+        <h2>RaJaN</h2>
+      </div>
+
+      <div class="marquee">
+        <marquee>Welcome to my website</marquee>
+      </div>
+
+      <div class="actions">
+        <div class="search-login">
+          <input type="text" placeholder="Search here" />
+          <button class="scr">Search</button>
+          <button class="login">Login</button>
+        </div>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+    <hr>
+
+
+    <!--About-->
+  <div class="about-container">
+    <div class="about-left">
+      <img src="../photos/1736581013860.jpg" alt="Rajan KC">
+      <h2>Rajan KC</h2>
+      <p>Diploma IT Student at Saraswati Secondary School, passionate about coding and website development.</p>
+      <button id="learnMoreBtn">Learn More</button>
+    </div>
+    <!--
+    <div class="about-right">
+      <img src="" alt="Featured Work">
+    </div>-->
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <div class="modal-body">
+        <div class="modal-text">
+          <h3>Intro / Short Summary</h3>
+          <p>I am Rajan KC, currently pursuing a Diploma in Information Technology at Saraswati Secondary School, Bharatpur-15, Dang. I enjoy learning new technologies and building practical projects during my free time.</p>
+
+          <h3>Skills & Interests</h3>
+          <ul>
+            <li>Frontend: HTML, CSS, JavaScript</li>
+            <li>Backend: PHP, MySQL</li>
+            <li>Other: Git/GitHub, Responsive Design</li>
+          </ul>
+
+          <h3>Current Projects / Experience</h3>
+          <p>I create websites for local businesses and educational institutions. Currently working on a Mobile Shop website with full backend integration.</p>
+
+          <h3>Education</h3>
+          <p>Diploma in IT - Saraswati Secondary School, Dang<br>Schooling till class 10 - Nepal Rastriya Ma.Vi., Gangadev-5, Rolpa</p>
+
+          <h3>Certificates / Achievements</h3>
+          <p>Participated in various IT competitions and workshops related to web development and PHP.</p>
+
+          <h3>Goals / Vision</h3>
+          <p>My goal is to become a full-stack web developer and contribute to digital Nepal through impactful web solutions.</p>
+
+          <h3>Fun Personal Touch</h3>
+          <p>I love music, travel, and solving tech problems that help real people.</p>
+
+          <button class="resume-btn">Download Resume</button>
+          <button class="cta-btn">Contact Me</button>
+        </div>
+        <!--project
+        <div class="modal-images">
+          <img src="images/img2.jpg" alt="Project 1">
+          <img src="images/img3.jpg" alt="Project 2">
+          <img src="images/img4.jpg" alt="Project 3">
+        </div>
+      -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const learnMoreBtn = document.getElementById('learnMoreBtn');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+
+    learnMoreBtn.onclick = () => modal.style.display = 'block';
+    closeModal.onclick = () => modal.style.display = 'none';
+    window.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
+  </script>
+
+
+     <!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+
+    <div class="footer-nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Rajan Website. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
